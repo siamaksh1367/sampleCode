@@ -1,0 +1,3 @@
+﻿Nav_Home=Home
+Nav_Earn=Earn
+Nav_Pay=Pay

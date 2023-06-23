@@ -1,0 +1,14 @@
+﻿@typeparam TData
+@typeparam SComponent;
+
+<ul class="m-0 p-0 collapse list-unstyled bg-light border rounded-1 border-secondary border-1" id=@TargetId>
+    @foreach (var item in _items)
+    {
+        <Item TargetId=@TargetId>
+            @ItemPresentation(item)
+        </Item>
+    }
+</ul>
+
+
+

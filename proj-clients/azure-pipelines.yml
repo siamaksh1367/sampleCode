@@ -1,0 +1,35 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: dotnet restore
+  displayName: 'dotnet restore'
+  workingDirectory: $(projectDir)
+
+- script: dotnet build
+  displayName: 'dotnet build'
+  workingDirectory: $(projectDir)
+
+- task: DotNetCoreCLI@2
+  displayName: 'run unit test'
+  inputs:
+    command: 'test'
+    workingDirectory: $(testDir)
+
+- script: dotnet publish -o $(build.artifactStagingDirectory)
+  displayName: 'dotnet publish -o $(build.artifactStagingDirectory)'
+  workingDirectory: $(projectDir)
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(build.artifactStagingDirectory)'
+    artifact: 'drop'
+    publishLocation: 'pipeline'

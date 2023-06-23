@@ -1,0 +1,13 @@
+﻿@using proj.models;
+<div class="d-flex flex-column justify-content-start align-items-end position-fixed" style="top:1rem; right:2rem;">
+    <RoundButton TargetId=@_targetId>
+        <img class=" flex-grow-1 rounded-circle mr-2" src=@_imageSource width =30 height=30 />
+    </RoundButton>
+    <ItemList ItemsCollcetedEvent=@ItemCollectedHandler TargetId=@_targetId TData=LanguageData SComponent=Languages>
+        <ItemPresentation>
+            <LanguageItem LanguageSelectedEvent=@LanguageSelectedHandler Language=@context></LanguageItem>
+        </ItemPresentation>
+    </ItemList>
+</div>
+
+

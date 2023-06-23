@@ -1,0 +1,3 @@
+﻿Nav_Home=خانه
+Nav_Earn=درآمد
+Nav_Pay=نمایش

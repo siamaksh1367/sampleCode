@@ -1,0 +1,9 @@
+[submodule "proj-api"]
+	path = proj-api
+	url = https://siameh@dev.azure.com/siameh/proj/_git/proj-api
+[submodule "proj-clients"]
+	path = proj-clients
+	url = https://siameh@dev.azure.com/siameh/proj/_git/proj-clients
+[submodule "proj-infrastructure"]
+	path = proj-infrastructure
+	url = https://siameh@dev.azure.com/siameh/proj/_git/proj-infrastructure
